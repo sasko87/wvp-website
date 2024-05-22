@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Грижа за корисници | WVP osiguritelen broker</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,600&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/11690a5473.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo-container">
+          <a href="index.html"
+            ><img src="images/WVP-logo.png" alt="WVP лого" class="logo"
+          /></a>
+        </div>
+        <div class="openMenu"><i class="fa fa-bars"></i></div>
+        <ul id="meni-list">
+          <li>
+            <a href="index.html" id="link-pocetna" class="link">Почетна</a>
+          </li>
+          <li><a href="za-nas.html" id="link-zanas" class="link">За нас</a></li>
+          <li><a href="posreduvanje.html" class="link">Посредување</a></li>
+          <li><a href="uslugi.html" class="link">Услуги</a></li>
+          <li><a href="partneri.html" class="link">Партнери</a></li>
+          <li><a href="cpp.html" class="link">ЧПП</a></li>
+          <li><a href="kontakt.html" class="link">Контакт</a></li>
+          <li>
+            <a href="https://wvp.at" class="link" target="_blank">
+              За соработници</a
+            >
+          </li>
+          <li>
+            <a href="griza-klienti.html" class="link">Грижа за корисници</a>
+          </li>
+          <li>
+            <a href="plakanje.html" class="online-plakanje"
+              >Начини на плаќање</a
+            >
+          </li>
+          <div class="closeMenu"><i class="fa fa-times"></i></div>
+        </ul>
+      </nav>
+    </header>
+    <section id="section-korisnici">
+      <div class="griza-klienti_cover">
+        <h2>Грижа за корисници</h2>
+        <p>Ние се грижиме за нашите клиенти</p>
+      </div>
+    </section>
+
+    <section id="zadovolstvo" class="zadovolstvo">
+      <h2 class="section-title">Дали сте задоволни од нашите услуги?</h2>
+      <p class="zadovostvo-subtitle">
+        Внесете го вашиот телефонски број или e-mail адреса и ние ќе ве
+        контактираме
+      </p>
+      <hr />
+      <div class="emojis">
+        <img
+          src="images/smile-emoji.png"
+          class="emoji-img"
+          data-tab="1"
+          id="smile"
+          alt=""
+        />
+        <img
+          src="images/sad-emoji.png"
+          class="emoji-img"
+          id="sad"
+          data-tab="2"
+          alt=""
+        />
+      </div>
+      <div class="griza-klienti_form-1">
+        <img
+          src="images/smile-emoji.png"
+          class="emoji-smile"
+          id="smile"
+          alt="Задоволен"
+        />
+        <form>
+          <label for="telefonski-broj" class="label">Телефонски број</label>
+          <input
+            type="number"
+            name="telefonski-broj"
+            placeholder="Внесете телефонски број"
+            class="input"
+          /><br />
+          <label for="email" class="label">E-mail:</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Внесете E-mail"
+            class="input"
+          /><br />
+          <button type="submit" class="online-plakanje submit">Испрати</button>
+        </form>
+      </div>
+      <div class="griza-klienti_form-2">
+        <img
+          src="images/sad-emoji.png"
+          class="emoji-sad"
+          id="smile"
+          alt="Незадоволен"
+        />
+        <form>
+          <label for="telefonski-broj" class="label">Телефонски број</label>
+          <input
+            type="number"
+            name="telefonski-broj"
+            placeholder="Внесете телефонски број"
+            class="input"
+          /><br />
+          <label for="email" class="label">E-mail:</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Внесете E-mail"
+            class="input"
+          /><br />
+          <button type="submit" class="online-plakanje submit">Испрати</button>
+        </form>
+      </div>
+    </section>
+    <section class="response hidden">
+      <div class="response-message">
+        <h3>Ви благодариме за Вашиот Feedback</h3>
+        <p>Ќе ве контактираме наскоро</p>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="footer-flex">
+        <img src="images/WVP-logo.png" alt="WVP лого" class="logo" />
+        <div class="footer-adresa footer-adresa-row">
+          <div class="footer-adresa-margin">
+            <p>ул. бул. Кочо Рацин бр.3, влез 2, кат 2</p>
+            <p>1000 Скопје, Р. Македонија</p>
+          </div>
+          <div class="footer-adresa-margin">
+            <p>ул. Загребска бр. 28 лок.19</p>
+            <p>1000 Скопје, Р. Македонија</p>
+          </div>
+        </div>
+        <div class="footer-adresa">
+          <p class="footer-broj">+389 (2) 32 983 55</p>
+          <p class="footer-mail">wvpskopje@wvp.mk</p>
+        </div>
+      </div>
+    </footer>
+    <script src="commonFunctions.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="griza.js"></script>
+  </body>
+</html>

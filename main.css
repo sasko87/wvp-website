@@ -1,0 +1,2036 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #3f66da;
+  --color-secondary: rgb(241, 241, 241);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+header {
+  background-color: var(--color-secondary);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid gray;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 25px;
+}
+
+section {
+  padding: 4.3rem 2rem;
+  transition: transform 1s, opacity 1s;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.logo {
+  width: 150px;
+}
+
+/* menu */
+.openMenu {
+  font-size: 2rem;
+  margin: 20px;
+  display: none;
+  cursor: pointer;
+}
+
+.closeMenu {
+  font-size: 2rem;
+  display: none;
+  cursor: pointer;
+}
+#meni-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  padding: 0.8rem 0.33rem;
+  position: relative;
+}
+
+.link::before,
+.link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: all 0.6s ease;
+}
+
+.link::before {
+  top: 0;
+  left: 0;
+  transform-origin: left;
+}
+.link::after {
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+}
+
+.link:hover::before,
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.active {
+  color: var(--color-primary);
+}
+
+.active::before,
+.active::after {
+  transform: scaleX(1);
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+.online-plakanje {
+  background-color: var(--color-primary);
+  color: white;
+  border: 2px solid var(--color-primary);
+  border-radius: 15px;
+  padding: 8px 15px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.online-plakanje:hover {
+  background: var(--color-secondary);
+  color: black;
+}
+
+hr {
+  width: 15%;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  margin-bottom: 30px;
+}
+
+/* ------------------NASLOVNA --------------*/
+
+.main {
+  height: 90vh;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
+    url(images/future-globe.jpg) no-repeat center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-tekst {
+  text-align: center;
+  width: 54%;
+}
+
+.slogan {
+  margin: 0;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  color: white;
+  font-size: 2vw;
+  font-weight: 900;
+  animation: vfp-logo 2s ease-in;
+}
+
+.vfp-ad {
+  width: 70%;
+  animation: slogan 2s ease-in;
+}
+
+.naslovna-vfp-container {
+  background-color: var(--color-secondary);
+  padding: 0;
+  display: flex;
+}
+
+.vfp-text {
+  margin: auto;
+  width: 40%;
+}
+
+.vfp-naslovna-img {
+  width: 50vw;
+  height: 85vh;
+}
+
+.naslovna-za-vfp {
+  animation: none;
+  padding: 10px;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#naslovna-counter {
+  background-color: white;
+  margin-top: 0;
+  position: relative;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.card {
+  width: 35%;
+  min-height: 180px;
+  background-color: var(--color-secondary);
+  padding: 30px;
+  margin: 40px 15px;
+  border-top-left-radius: 60px;
+  box-shadow: 3px 3px 3px rgba(103, 103, 103, 0.2);
+}
+
+.counter {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.count-dogovori,
+.count-premija {
+  margin: 5px 0 5px 5px;
+  padding-bottom: 0;
+  font-size: 50px;
+  color: var(--color-primary);
+  font-weight: 600;
+  display: inline-block;
+}
+
+.premija-zapirka {
+  font-size: 45px;
+  margin: 0;
+}
+
+.count-opis {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.count-dogovori__opis {
+  margin: 0;
+}
+
+@keyframes slogan {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes vfp-logo {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+#naslovna-uslugi {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url(images/familija.jpg) no-repeat;
+  background-size: cover;
+  background-position: right center;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.title-uslugi {
+  color: white;
+  margin-top: 0;
+}
+
+.naslovna-nudenje-uslugi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.naslovna-uslugi {
+  background-color: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(1px);
+  width: 30%;
+  min-height: 500px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.naslovna-uslugi:hover {
+  transform: scale(1.02);
+}
+
+.naslovna-uslugi-osiguruvanje {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  padding-top: 25px;
+  text-align: center;
+}
+
+.naslovna-vidovi-osiguruvanje {
+  color: white;
+  list-style: none;
+  text-align: left;
+  line-height: 30px;
+  margin: 0 25px;
+  padding: 0;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.doznaj-button {
+  padding: 10px 40px;
+  border: none;
+  border-radius: 15px;
+  color: black;
+  background: white;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: all 500ms ease;
+}
+
+.doznaj-button:hover {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  transition: 500ms ease;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 800ms ease;
+}
+
+.doznaj-button:active {
+  transform: scale(0.9);
+  transition: all 500ms ease;
+}
+
+#partneri {
+  background-color: var(--color-secondary);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.naslovna-partneri {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0 50px 0;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.partneri-logo img {
+  width: 170px;
+  height: 70px;
+  margin-right: 40px;
+}
+
+.partneri-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: fit-content;
+  animation: slide 35s linear infinite;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translate(-100%);
+  }
+}
+
+/* ----------------  ZA NAS ----------------- */
+
+#sekcija-info-vfp {
+  display: flex;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.slika-zgrada {
+  margin: 40px;
+  width: 400px;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.5);
+}
+
+article {
+  margin: 0 80px;
+}
+
+#zanas-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary);
+}
+
+.zanas-button {
+  margin: 70px auto;
+  padding: 20px 120px;
+  border: 1px solid #ef2129;
+  background: linear-gradient(to bottom, #ffe1e1, #ef4436, #ef2129);
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.izvestai-link {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+
+.zanas-button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid var(--color-primary);
+  transition: 500ms;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.zanas-button:active {
+  transform: scale(0.95);
+}
+
+/*-----------------POSREDUVANJE----------------*/
+
+#posreduvanje-sopstvenicki {
+  background-color: var(--color-secondary);
+}
+
+#zasto-broker {
+  background-color: white;
+}
+.zasto-broker__pricini {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 22%;
+  flex: 1 1 auto;
+  position: relative;
+  transition: all 100ms ease;
+}
+
+.zasto-broker__pricini:hover {
+  transform: scale(1.05);
+}
+
+.zasto-broker__pricini p {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.ikoni-broker {
+  position: absolute;
+  top: -12%;
+  left: 40%;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 50%;
+}
+
+.ikoni-broker:first-child {
+  padding: 15px 20px;
+}
+
+.ikona-info:first-child {
+  padding: 10px 25px 15px 25px;
+}
+
+.ikoni-ponuda:first-child {
+  padding: 15px 14px;
+}
+
+.zasto-broker__pricini i {
+  font-size: 40px;
+}
+
+/* USLUGI*/
+
+#uslugi-pridobivki-zivotno {
+  background-color: var(--color-secondary);
+}
+
+#sekcija-vidovi-zivotno-osiguruvanje {
+  background-color: white;
+}
+
+.uslugi-zivotono__container,
+.uslugi-nezivotono__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-secondary);
+  border-radius: 15px;
+  margin: 90px auto 0 auto;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.6);
+  padding-bottom: 350px;
+  position: relative;
+  max-width: 1220px;
+}
+
+.uslugi-zivotno__tab,
+.uslugi-nezivotno__tab {
+  display: flex;
+}
+
+.zivotno-items,
+.nezivotno-items {
+  margin: auto 20px;
+}
+
+.zivotno-items__button,
+.nezivotno-items__button,
+.nezivotno-second-btn,
+.nezivotno-third-btn {
+  background-color: var(--color-primary);
+  color: white;
+  width: 150px;
+  height: 100px;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.zivotno-items__button:hover,
+.nezivotno-items__button:hover,
+.nezivotno-second-btn:hover,
+.nezivotno-third-btn:hover {
+  background-color: #4570f1;
+}
+.uslugi-tekst,
+.nezivotno-tekst,
+.nezivotno-second-tekst,
+.nezivotno-third-tekst {
+  display: none;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: left;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  right: -30%;
+  transform: translate(-40%, -40%);
+}
+
+.uslugi-tekst__activ,
+.nezivotno-tekst__activ {
+  display: flex;
+}
+
+.osiguruvanje-vozila {
+  text-align: left;
+  margin: 5px auto;
+}
+
+.uslugi-tab__aktive,
+.nezivotno-tab__active {
+  border: 2px solid #2a4eba;
+  transform: translateY(-75%);
+}
+
+.uslugi p {
+  display: inline-block;
+}
+
+.main-uslugi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(253, 253, 253);
+}
+
+.main-container {
+  width: 40%;
+}
+
+.main-slika {
+  width: 100%;
+}
+
+.uslugu-zivotno-osiguruvawe {
+  margin-bottom: 10px;
+  color: rgb(88, 101, 109);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.naslovi {
+  font-size: 40px;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+}
+
+.podnaslovi {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.section-title_left {
+  text-align: left;
+}
+
+.pridobivki-naslov {
+  font-size: 30px;
+  padding-bottom: 70px;
+  margin-top: 0;
+}
+
+.ikoni {
+  text-align: center;
+  font-size: 60px;
+  padding-bottom: 10px;
+  color: var(--color-primary);
+}
+
+.uslugi-zasteda {
+  font-size: 25px;
+}
+
+.zivotno-pridobivki {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22%;
+  height: 220px;
+}
+
+.zivotno-pridobivki h2 {
+  text-align: center;
+}
+
+.zivotno-pridobivki-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 70px 100px;
+}
+
+.uslugi-vidovi-zivotno h3 {
+  border-top: 1px solid gray;
+  margin: 10px 0;
+  padding-top: 30px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.nezivotno-nalov {
+  margin-left: 65px;
+}
+
+.nezivotno-uslugi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.naslov {
+  margin-left: 65px;
+  margin-right: 65px;
+  font-size: 35px;
+}
+
+#dobrovolno-zdravstveno-osiguruvanje {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: white;
+  padding-left: 0;
+}
+
+.privatno-zdravstveno-container {
+  background-color: var(--color-primary);
+  height: fit-content;
+  width: 55%;
+  color: white;
+  border-radius: 15px;
+}
+
+.privatno-zdravstveno-container p {
+  color: white;
+  padding-left: 20px;
+}
+
+.privatno-zdravstveno-container h2 {
+  padding-left: 20px;
+}
+.vidovi-privatno-zdravstveno p {
+  border-top: 1px solid gray;
+  margin: 10px 0;
+  padding-top: 30px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/*----------PARTNERI--------*/
+#partneri-intro {
+  background-color: white;
+  height: fit-content;
+  font-size: 18px;
+  padding: 30px 20px;
+}
+
+.nasi-partneri {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 30px;
+  padding-bottom: 20px;
+}
+
+.nasi-partneri img {
+  width: 250px;
+  margin: 20px auto;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  flex: 1 1 15%;
+}
+
+.nasi-partneri img:first-child {
+  padding: 20px;
+}
+
+.nezivotno-partneri-container {
+  text-align: center;
+}
+
+.site-partneri {
+  width: 70vw;
+  height: auto;
+}
+
+.nasi-partneri img:hover {
+  transform: scale(0.95);
+  transition: all 400ms ease;
+}
+
+.partneri-naslov {
+  font-size: 45px;
+}
+
+#partneri-zivotno {
+  background-color: var(--color-secondary);
+}
+
+#partneri-nezivotno {
+  background-color: white;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+#partneri-zivotno img {
+  height: 120px;
+  max-width: 360px;
+  background-color: white;
+}
+
+/* ------------- CESTO POSTAVUVANI PRASANJA--------------*/
+
+#postavuvani-prasanja {
+  background-color: white;
+  padding: 50px 0;
+}
+
+.odgovori {
+  display: none;
+  width: 38%;
+  margin: 0 auto;
+  border: 1px solid var(--color-primary);
+  border-top: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.odgovori p {
+  margin-top: 0;
+  padding: 20px 15px;
+}
+
+.prasanja {
+  border: 1px solid var(--color-primary);
+  width: 40%;
+  margin: 30px auto 0 auto;
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.prasanja:hover {
+  cursor: pointer;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.arrow-down {
+  text-align: right;
+}
+
+/* ---------------------- KONTAKT -------------------*/
+
+#kontakt-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+  padding: 50px 0;
+}
+
+.mapa {
+  width: 90%;
+  text-align: center;
+}
+
+.google-map {
+  width: 500px;
+  height: 350px;
+  border: 0;
+}
+
+.sediste {
+  width: 90%;
+}
+
+.vfp-ad-skopje {
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+
+.sediste span {
+  font-weight: bold;
+}
+#podruznici {
+  background-color: var(--color-secondary);
+  padding-bottom: 70px;
+}
+#podruznici h3 {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 30px;
+  padding-top: 40px;
+}
+
+.site-podruznici {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.podruznici-vfp {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.podruznici-vfp p:nth-child(odd) {
+  font-weight: bold;
+}
+
+/*----------------- FOOTER ------------------*/
+
+footer {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 25px;
+}
+
+.footer-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-broj {
+  font-size: 20px;
+  margin: 16px 0;
+}
+
+.footer-adresa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-adresa p,
+.broj p {
+  line-height: 0.5px;
+}
+
+.footer-adresa-row {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-adresa-margin {
+  margin-left: 80px;
+  text-align: center;
+}
+
+.footer-mail {
+  margin: 16px 0;
+}
+
+/* ------------PLAKANJE------------ */
+
+.uplatnici {
+  display: flex;
+  flex-direction: column;
+}
+.uplatnici img {
+  width: 450px;
+}
+
+.active-logo {
+  transform: translateY(-30%);
+  background-color: #2a4eba;
+  box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
+}
+
+.plakanje-container {
+  margin: 10px;
+}
+.plakanje-logo_zivot {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transform: translateY(-70%);
+  padding-top: 60px;
+}
+
+.plakanje-logo_zivot img {
+  width: 200px;
+  height: 80px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.plakanje-opcii {
+  display: none;
+  flex-wrap: wrap;
+  margin: 0 20px 10px 20px;
+  justify-content: space-around;
+}
+
+.plakanje-btn {
+  background-color: white;
+  height: 70px;
+  transform: translateY(-130%);
+  border: 1px solid var(--color-primary);
+}
+
+.plakanje-btn:hover {
+  background-color: #dfe6fc;
+}
+
+.plakanje-opcii_active {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 20px 10px 20px;
+  justify-content: space-around;
+  margin: 0 auto;
+  align-items: center;
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  right: -30%;
+  transform: translate(-40%, -40%);
+}
+
+.online-plakanje_container {
+  padding-bottom: 180px;
+}
+
+.plati-btn {
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  background-color: #ef2129;
+  border-radius: 15px;
+  width: 150px;
+  margin-top: 15px;
+  align-self: flex-start;
+}
+
+.online-btn_link {
+  text-decoration: none;
+  color: white;
+}
+
+.info-plakanje {
+  background: url(images/plakanje.jpg);
+  border-image: fill 0 linear-gradient(#0001, #000);
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-plakanje h2 {
+  margin-top: 0;
+}
+
+.banka,
+.smetka {
+  line-height: 35px;
+  margin: auto 30px;
+}
+
+.banka-ime {
+  text-transform: uppercase;
+}
+
+.banka-smetka_container {
+  display: flex;
+}
+
+.smetka {
+  margin-right: 40px;
+}
+
+.banka-smetka_naslov {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.plakanje-naslov {
+  text-align: center;
+}
+
+/* .plakanje-zivotno_container {
+  padding-bottom: 500px;
+} */
+
+.no-background {
+  background-color: white;
+  box-shadow: none;
+  padding-bottom: 0;
+}
+
+.gray-background {
+  background-color: var(--color-secondary);
+  padding-bottom: 480px;
+  margin-bottom: 60px;
+}
+
+.plakanje-nezivotno-second {
+  margin-top: 0;
+}
+
+.online-zivotno-container {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* .plakanje-nezivotno-container {
+  margin-bottom: 60px;
+} */
+
+#section-korisnici {
+  background: url(images/griza-\ korisnici.jpg);
+  background-size: cover;
+  background-position: right center;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.griza-klienti_cover {
+  flex-direction: column;
+  width: 50%;
+  margin-left: 60px;
+}
+
+.griza-klienti_cover h2 {
+  font-size: 100px;
+  margin-bottom: 30px;
+}
+
+.griza-klienti_cover p {
+  font-size: 30px;
+}
+
+#zadovolstvo {
+  background-color: rgb(241, 241, 241);
+}
+
+.emojis {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+}
+
+.emoji-img,
+.emoji-smile,
+.emoji-sad {
+  width: 20%;
+  margin: 40px 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.emoji-smile,
+.emoji-sad {
+  width: 12%;
+}
+
+.emoji-img:hover {
+  transform: scale(1.09);
+}
+
+.hidden {
+  display: none;
+}
+
+.griza-klienti_form-1,
+.griza-klienti_form-2 {
+  display: none;
+}
+
+.activeKorisnici {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: showUp 2s forwards;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.zadovostvo-subtitle {
+  text-align: center;
+}
+
+.input {
+  width: 250px;
+  text-align: center;
+  height: 30px;
+}
+
+.submit {
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.label {
+  color: black;
+  margin-bottom: 8px;
+}
+
+.response-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  border: 1px solid #3f66da;
+  border-radius: 15px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.response-message h3 {
+  font-size: 40px;
+  margin-bottom: 15px;
+  padding: 40px 40px 0 40px;
+}
+
+.response-message p {
+  font-size: 20px;
+  padding-bottom: 60px;
+}
+
+@keyframes showUp {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1480px) {
+  .slika-zgrada {
+    margin: 20px auto;
+    width: 450px;
+  }
+
+  #zanas-buttons {
+    padding: 0.7rem;
+  }
+
+  #main-uslugi .main-slika {
+    width: 500px;
+  }
+  .uslugi-zivotono__container,
+  .uslugi-nezivotono__container {
+    margin: 120px 20px 30px 20px;
+  }
+
+  .vfp-partneri {
+    width: 300px !important;
+    height: 110px !important;
+  }
+
+  .smetka,
+  .banka {
+    margin: auto 20px;
+  }
+  .plakanje-opcii_active {
+    padding: 30px;
+  }
+
+  .prasanja {
+    width: 60%;
+  }
+
+  .odgovori {
+    width: 58%;
+  }
+  #section-korisnici {
+    height: 80vh;
+  }
+
+  .griza-klienti_cover {
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  section {
+    padding: 2rem 0.5rem;
+  }
+
+  .link {
+    font-size: 13.5px;
+    padding: 12.8px 5px;
+  }
+
+  .logo {
+    width: 130px;
+  }
+
+  .count-dogovori,
+  .count-premija {
+    font-size: 40px;
+  }
+
+  .premija-zapirka {
+    font-size: 35px;
+  }
+  .count-opis {
+    font-size: 19px;
+    padding-top: 10px;
+  }
+
+  .google-map {
+    margin: 30px;
+  }
+
+  .slika-zgrada {
+    margin: 0 25px 30px 15px;
+    width: 450px;
+  }
+
+  #zanas-buttons {
+    padding: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .zanas-button {
+    margin: 40px 10px;
+    padding: 20px 110px;
+  }
+
+  article {
+    margin: 0 25px 30px 15px;
+    font-size: 15px;
+  }
+
+  #main-uslugi .main-slika {
+    width: 450px;
+    height: 400px;
+  }
+
+  .zivotno-items__button,
+  .nezivotno-items__button {
+    width: 105px;
+  }
+
+  .site-partneri {
+    width: 90vw;
+  }
+
+  .plakanje-btn {
+    width: 120px;
+    height: 60px;
+    margin: 20px;
+  }
+
+  .uplatnici img {
+    width: 300px;
+  }
+
+  .smetka,
+  .banka {
+    line-height: 20px;
+  }
+
+  .plati-btn {
+    align-self: center;
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  #section-korisnici {
+    height: 70vh;
+  }
+
+  .emoji-smile,
+  .emoji-sad {
+    width: 150px;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .link {
+    font-size: 13px;
+    padding: 12.8px 3px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .griza-klienti_cover h2 {
+    font-size: 75px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  section {
+    padding: 2rem 0.5rem;
+  }
+
+  #main {
+    height: 65vh;
+  }
+
+  .count-dogovori,
+  .count-premija {
+    font-size: 30px;
+  }
+
+  .premija-zapirka {
+    font-size: 25px;
+  }
+
+  .naslovna-uslugi {
+    width: 25%;
+  }
+
+  .zasto-broker__pricini {
+    width: 40%;
+  }
+
+  .vfp-ad-skopje {
+    font-size: 34px;
+  }
+
+  .google-map {
+    width: 400px;
+    height: 380px;
+  }
+
+  #sekcija-info-vfp {
+    display: block;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url(images/wvp-zgrada.jpg) no-repeat;
+    background-size: cover;
+    color: white;
+    padding-bottom: 30px;
+    margin-bottom: 0;
+  }
+
+  .slika-zgrada {
+    display: none;
+  }
+
+  .zanas-button {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .zanas-button:last-child {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 675px;
+  }
+
+  #posreduvanje {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url(images/posreduvanje.png) no-repeat;
+    background-size: cover;
+    color: white;
+    margin-bottom: 0;
+  }
+
+  .posreduvanje {
+    display: block;
+    width: 90%;
+  }
+
+  #posreduvanje img {
+    display: none;
+  }
+
+  .posreduvanje-naslov {
+    width: 100%;
+  }
+
+  #main-uslugi {
+    display: block;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url(images/family.jpg) no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 70px 0;
+    margin-bottom: 0;
+  }
+
+  #main-uslugi .main-container {
+    width: 90%;
+    margin: auto;
+  }
+  #main-uslugi img {
+    display: none;
+  }
+
+  .zivotno-items,
+  .nezivotno-items {
+    margin: auto 8px;
+  }
+
+  .zivotno-items__button,
+  .nezivotno-items__button {
+    height: 110px;
+  }
+
+  .plakanje-zivotno_container {
+    padding-bottom: 600px;
+  }
+
+  #partneri-intro {
+    display: block;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url(images/partneri-slika.png) no-repeat center;
+    background-size: cover;
+    color: white;
+    padding: 85px 10px 100px;
+    margin-bottom: 0;
+  }
+
+  #partneri-intro .main-container {
+    width: 90%;
+    margin: auto;
+  }
+  #partneri-intro .main-slika {
+    display: none;
+  }
+
+  .vfp-container {
+    display: none;
+  }
+
+  .plakanje-btn {
+    width: 120px;
+    height: 60px;
+    margin: 5px;
+  }
+
+  .plakanje-opcii_active {
+    padding: 0;
+  }
+
+  .uplatnici {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .uplatnici img {
+    width: 45%;
+  }
+
+  .banka-smetka_container {
+    margin-top: 20px;
+    font-size: 15px;
+    justify-content: center;
+  }
+  .banka,
+  .smetka {
+    line-height: 15px;
+  }
+
+  #meni-list li a {
+    color: white;
+    font-size: 22px;
+  }
+
+  #meni-list li {
+    margin-top: 35px;
+  }
+
+  #meni-list {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    transform: top 1s ease;
+    transition: 1s;
+    display: none;
+    margin-top: 0;
+  }
+  .closeMenu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+  }
+
+  .openMenu {
+    display: block;
+  }
+
+  nav #meni-list li a:hover {
+    background-color: none;
+    color: #3f66da;
+  }
+
+  #section-korisnici {
+    height: 60vh;
+  }
+
+  .griza-klienti_cover h2 {
+    font-size: 50px;
+  }
+
+  .griza-klienti_cover p {
+    font-size: 25px;
+  }
+
+  .emojis {
+    width: 100%;
+  }
+
+  .emoji-img {
+    width: 40%;
+    margin-bottom: 60px;
+  }
+
+  .footer-adresa-margin {
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 2rem 0.5rem;
+  }
+  #main {
+    height: 50vh;
+  }
+
+  .vfp-naslovna-img {
+    display: none;
+  }
+
+  .naslovna-vfp-container {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url(images/wvp-naslovna.png) no-repeat top center;
+    background-size: cover;
+    display: flex;
+    height: 80vh;
+  }
+
+  .privatno-zdravstveno-container {
+    width: 100vw;
+  }
+  .vfp-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto 15px;
+  }
+
+  .naslovna-za-vfp {
+    color: white;
+    margin: auto 15px;
+  }
+
+  .count-premija,
+  .count-dogovori {
+    font-size: 22px;
+  }
+
+  .premija-zapirka {
+    font-size: 20px;
+  }
+
+  #naslovna-uslugi {
+    background-position: center;
+  }
+  .naslovna-uslugi {
+    width: 100%;
+  }
+
+  .count-opis {
+    font-size: 16px;
+  }
+  .footer-flex {
+    flex-direction: column;
+  }
+
+  .footer-adresa-row {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer-adresa-margin {
+    margin-left: 0;
+  }
+  .prasanja {
+    width: 80%;
+  }
+
+  .odgovori {
+    width: 78%;
+  }
+
+  #kontakt-main {
+    flex-wrap: wrap-reverse;
+  }
+  .google-map {
+    width: 500px;
+    height: 380px;
+  }
+  .sediste {
+    text-align: center;
+  }
+
+  .zanas-button,
+  .zanas-button:last-child {
+    margin: 20px 10px;
+    width: 500px;
+  }
+
+  .main-container {
+    display: block;
+    width: 90%;
+  }
+
+  #main-uslugi {
+    background-position: center;
+  }
+
+  .nezivotno-nalov,
+  .naslov {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .uslugi-zivotono__container,
+  .uslugi-nezivotono__container {
+    border: none;
+    box-shadow: none;
+    background-color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 30px;
+  }
+
+  .uslugi-zivotno__tab,
+  .uslugi-nezivotno__tab {
+    display: block;
+    width: 100%;
+  }
+
+  .zivotno-items__button,
+  .nezivotno-items__button,
+  .plakanje-btn {
+    transform: none;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 18px;
+    height: 80px;
+  }
+
+  .uslugi-tab__aktive {
+    transform: none;
+  }
+
+  .uslugi-tekst__activ,
+  .nezivotno-tekst__activ {
+    position: static;
+    display: block;
+    transform: translate(0);
+    width: 90%;
+    border: 1px solid var(--color-primary);
+  }
+
+  .ikoni {
+    font-size: 45px;
+  }
+
+  .uslugi-zasteda {
+    font-size: 22px;
+  }
+
+  .zivotno-pridobivki p {
+    font-size: 14.5px;
+  }
+
+  .zivotno-pridobivki-container {
+    flex-wrap: wrap;
+  }
+
+  .zivotno-pridobivki {
+    width: 45%;
+    margin-bottom: 15px;
+  }
+
+  .zivotno-items {
+    text-align: center;
+  }
+
+  .plakanje-btn {
+    width: 80%;
+    height: 220px;
+    margin: 20px;
+  }
+
+  .plakanje-opcii_active {
+    flex-direction: column-reverse;
+    justify-content: center;
+    position: static;
+    transform: translate(0);
+    width: 80%;
+  }
+
+  .online-plakanje_container {
+    padding-bottom: 10px;
+  }
+
+  .uplatnici {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-adresa {
+    margin: 10px;
+  }
+
+  #footer {
+    padding-top: 20px;
+  }
+
+  #section-korisnici {
+    height: 50vh;
+    background-position-x: 10px;
+    background-repeat: no-repeat;
+  }
+
+  .response-message {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  section {
+    padding: 2rem 0.3rem;
+  }
+
+  #main {
+    height: 30vh;
+  }
+
+  #naslovna-counter {
+    padding: 15px 5px;
+  }
+
+  .counter {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .count-dogovori,
+  .count-premija {
+    font-size: 30px;
+  }
+
+  .premija-zapirka {
+    font-size: 25px;
+  }
+  .count-opis {
+    font-size: 20px;
+  }
+
+  .naslovna-izvor__aso {
+    text-align: center;
+    right: 0;
+  }
+
+  .zasto-broker__pricini {
+    width: 100%;
+    border-radius: 15px;
+    margin: 25px 15px;
+  }
+
+  .odgovori {
+    width: 75%;
+  }
+
+  .google-map {
+    width: 320px;
+  }
+
+  .site-podruznici {
+    display: block;
+    margin: 10px;
+  }
+
+  .podruznici-vfp {
+    width: 100%;
+  }
+
+  .podruznici-vfp p {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  #sekcija-info-vfp {
+    background-position: center;
+  }
+
+  .partneri-naslov {
+    font-size: 30px;
+  }
+
+  #partneri-zivotno img {
+    margin: 20px 5px;
+  }
+
+  .plati-btn {
+    width: 90%;
+  }
+
+  #naslovna-uslugi {
+    background-position: left;
+  }
+
+  .banka,
+  .smetka {
+    line-height: 10px;
+    font-size: 14px;
+    margin: 2px 0 10px 3px;
+  }
+
+  .smetka {
+    margin-left: 3px;
+  }
+
+  .plakanje-opcii_active {
+    padding: 0;
+    margin: auto;
+    width: 90%;
+  }
+
+  .plakanje-btn {
+    height: 100px;
+  }
+
+  #section-korisnici {
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: fit-content;
+  }
+
+  .griza-klienti_cover h2 {
+    font-size: 30px;
+  }
+
+  .griza-klienti_cover p {
+    font-size: 16px;
+  }
+
+  .response-message h3 {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 399px) {
+  #main {
+    background-position: center;
+  }
+
+  .zivotno-pridobivki {
+    padding: auto 0;
+  }
+
+  .banka,
+  .smetka {
+    font-size: 13px;
+  }
+
+  .naslovna-vfp-container {
+    height: 90vh;
+  }
+
+  .naslovna-za-vfp {
+    font-size: 18px;
+  }
+  .count-dogovori,
+  .count-premija {
+    font-size: 27px;
+  }
+
+  .premija-zapirka {
+    font-size: 23px;
+  }
+  .count-opis {
+    font-size: 18px;
+  }
+
+  .partneri-naslov {
+    font-size: 25px;
+  }
+
+  .response-message {
+    width: 90%;
+  }
+
+  .response-message h3 {
+    font-size: 27px;
+  }
+}
